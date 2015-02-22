@@ -9,7 +9,7 @@
 #include <signal.h>
 #include <string.h>
 #include <fcntl.h>  
-#include "joe.h"
+#include "alex.h"
 
 void println(char * line){
 	fprintf(stdout, "%s\n", line);
