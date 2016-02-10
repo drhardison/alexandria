@@ -15,6 +15,11 @@
 typedef int bool;
 typedef int boolean;
 
+bool proceed(char *);  	// Asks user if he'd like to proceed.
+
+void toUpper(char *, size_t); // Converts string to UpperCase
+void toLower(char *, size_t); // Converts string to LowerCase
+
 void println(char *); 	// Prints the string with \n added.
 void printerr(char *);	// Prints the error string that you send it terminated with a \n.
 void printerrno(int);	// Takes the errno, and prints the associated error with a \n.

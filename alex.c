@@ -11,6 +11,50 @@
 #include <fcntl.h>  
 #include "alex.h"
 
+bool proceed(char * prompt){
+
+	while(true){
+		fprintf(stdout, "%s", prompt);
+		char * input = NULL;
+		size_t inputSize = 0;
+		int error = getline(&input, &inputSize, stdin);
+		toLower(input, 1);
+		char choice = input[0];
+		if (error != -1){
+			switch (choice){
+				case 'y':
+					return true;
+					break;
+				case 'n':
+					return false;
+					break;
+				default:
+					fprintf(stdout, "%s\n","Please type y or n."); 
+					break;	
+			}
+		}
+		else{
+			fprintf(stderr, "Error Getting Input From User...\n");
+			exit(0);
+		}
+	}
+}
+
+void toUpper(char *input, size_t length){
+	int i;
+	for(i=0; i<length; i++){
+		input[i] = (char)(toupper(input[i]));
+	} 
+}
+
+void toLower(char *input, size_t length){
+        int i;
+        for(i=0; i<length; i++){
+                input[i] = (char)(tolower(input[i]));
+        }     
+}
+
+
 void println(char * line){
 	fprintf(stdout, "%s\n", line);
 }
