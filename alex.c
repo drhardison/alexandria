@@ -1,4 +1,8 @@
-//C Library of Alexandria
+/***********************************************
+* Authon: Joseph Hagan
+* E-mail: joseph.m.hagan@wmich.edu
+* Description: A multipurpose C library (c file)
+*************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>

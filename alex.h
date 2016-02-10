@@ -1,4 +1,8 @@
-//C Library of Alexandria - header file
+/***********************************************
+* Authon: Joseph Hagan
+* E-mail: joseph.m.hagan@wmich.edu
+* Description: A multipurpose C library (header file)
+*************************************************/
 
 #include <stdio.h>
 #include <stdlib.h>
