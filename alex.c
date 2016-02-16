@@ -15,6 +15,29 @@
 #include <unistd.h>
 #include "alex.h"
 
+String newBlankString(int length){
+	String retval;
+	retval.string = calloc(1,length);
+	retval.length = length;
+	return retval;
+}
+
+String newString(char chars[]){
+	String retval;
+	size_t size = sizeof(chars());
+	char * temp = calloc(1, size);
+	retval.string = strncpy(temp,chars,size);
+	retval.length = (int) size;
+	return retval;  
+}
+
+int getStringLength(String stringy){
+	return stringy.length;
+}
+
+
+
+
 bool proceed(char * prompt){
 
 	while(true){

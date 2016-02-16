@@ -19,6 +19,18 @@
 typedef int bool;
 typedef int boolean;
 
+typedef struct {
+	char * string;
+	int length;
+} String;
+
+String newBlankString(int);
+
+String newString(char);
+
+int getStringLength(String);
+
+
 bool proceed(char *);  	// Asks user if he'd like to proceed.
 
 void toUpper(char *, size_t); // Converts string to UpperCase
