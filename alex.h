@@ -22,14 +22,18 @@ typedef int boolean;
 typedef struct {
 	char * string;
 	int length;
+	int size;
 } String;
 
 String newBlankString(int);
 
-String newString(char);
+String newString(const char *);
 
 int getStringLength(String);
+int getStringSize(String);
 
+void printString(String stringy);
+void printSLine(String stringy);
 
 bool proceed(char *);  	// Asks user if he'd like to proceed.
 

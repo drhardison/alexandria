@@ -17,17 +17,20 @@
 
 String newBlankString(int length){
 	String retval;
-	retval.string = calloc(1,length);
+	retval.string = calloc(1,(length + 1));
 	retval.length = length;
+	retval.size = length + 1;
 	return retval;
 }
 
-String newString(char chars[]){
+String newString(const char *chars){
 	String retval;
-	size_t size = sizeof(chars());
+	int length = (int) strlen(chars);
+	int size = length+1;
 	char * temp = calloc(1, size);
-	retval.string = strncpy(temp,chars,size);
-	retval.length = (int) size;
+	retval.string = strncpy(temp,chars,length);
+	retval.length = length;
+	retval.size = size;
 	return retval;  
 }
 
@@ -35,7 +38,17 @@ int getStringLength(String stringy){
 	return stringy.length;
 }
 
+int getStringSize(String stringy){
+	return stringy.size;
+}
 
+void printString(String stringy){
+	fprintf(stdout, "%s", stringy.string);
+}
+
+void printSLine(String stringy){
+	fprintf(stdout, "%s\n", stringy.string);
+}
 
 
 bool proceed(char * prompt){
